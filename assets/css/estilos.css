@@ -1,0 +1,247 @@
+ /*Preferencias de usuario*/
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #333;
+        --foreground-color: #eee;
+    }
+}
+      
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #eee;
+        --foreground-color: #111;
+        --foreground-color2: rgb(70, 70, 70);
+    }
+}
+      
+body {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    font-family: 'Roboto', sans-serif;  
+    width: 100%;
+}
+
+/*Estilos del menu de navegacion*/
+.navbar{
+    
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 250px;
+    height: 100%;
+    padding: 40px 10px 30px 10px;
+    border-right: 1px solid white;
+    transition: 0.3s;
+}
+/*Seccion del logo*/
+.imagen-logo{
+    width: 100%;
+    margin-bottom: 44px;
+}
+/*Imagen del icono del logo*/
+.logo-icon{
+    display: none;
+    font-size: 28px;
+    height: 35px;
+    width: 51px;
+    text-align: center;
+}
+/*Imagen del logo*/
+.logo{
+    margin-left: 14px;
+    height: 22px;
+    width: 50px;
+}
+
+/* Seccion de los botones de navegación*/
+.navbar button{
+    height: 60px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+}
+
+.navbar button > div{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 0 12px;
+    border-radius: 24px;
+    line-height: 1;
+}
+
+.navbar button:hover > div{
+    background: rgb(233, 233, 233) ;
+}
+
+.navbar button:hover > div :is(i,img) {
+    scale: 1.05;
+}
+
+
+.navbar button > div > div {
+    transition: 0.3s;
+}
+
+@media (max-width: 736px ) {
+    .logo{
+        display: none;
+    }
+
+    .logo-icon{
+        display: block;
+    }
+
+    .navbar{
+        width: 72px;
+    }
+
+    .navbar button > div{
+        width: 50px;
+    }
+
+    .navbar button > div > div {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+.navbar button i {
+    position: relative;
+    font-size: 28px;
+    transition: 0.2s;
+}
+
+.navbar button img {
+    width: 28px;
+    height: 28px;
+    transition: 0.2s;
+} 
+
+.navbar button i > div {
+    display: grid;
+    place-items: center;
+    height: 20px;
+    padding: 0 4px;
+    border-radius: 10px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    border: 1px solid white;
+    background: rgb(255, 75, 75);
+    color: rgb(233, 233, 233);
+    font-size: 12px;
+    font-style: normal;
+}
+
+.navbar button div {
+    font-size: 17px;
+}
+
+
+.navbar > nav {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.navbar > nav button:last-child {
+    margin-top: auto;
+}
+
+/*fin del menu de navegacion*/
+
+/*Contenedor del perfil*/
+
+header{
+    width: 60%;
+    margin: auto;
+    transform: translateY(50px);
+    padding: 20px 0;
+}
+
+.contenedor-perfil{
+    display: flex;
+}
+
+.contenedor-perfil img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Contenedor de Publicaciones */
+.contenedor-publicaciones {
+    width: 100%;
+    display: grid;
+    gap: .3em;
+    padding-left: .2em;
+    padding-right: .2em;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: aqua;
+  }
+  
+  .publicacion {
+    width: 100%;
+  }
+
+  .publicacion img {
+    max-width: 100%;
+    width:100%;
+    height: 300px;
+    object-fit: fill;
+  }
+  
+
+
+/* Footer */
+.footer {
+    width: 100%;
+    color: var(--foreground-color2);
+    display: flex;
+    flex-direction: column;
+    height: 12rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-datos {
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-datos ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--foreground-color2);
+    list-style: none;
+    gap: 1.5rem;
+  }
+  .footer-datos li:hover {
+    cursor: pointer;
+  }
+  .footer-datos li {
+    color: var(--foreground-color2);
+  }
+  
+  .footer-copy {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .footer-copy a {
+    color: var(--foreground-color2);
+    text-decoration: none;
+  }
